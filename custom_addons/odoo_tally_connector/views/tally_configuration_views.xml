@@ -1,0 +1,59 @@
+<odoo>
+    <data>
+        <!-- Menu Items -->
+        <menuitem id="menu_tally_configuration_root"
+                  name="Tally Connector"
+                  parent="account.menu_finance_configuration"
+                  groups="base.group_user"/>
+
+        <menuitem id="menu_tally_configuration"
+                  name="Tally Configuration"
+                  parent="menu_tally_configuration_root"
+                  groups="base.group_user"/>
+
+        <!-- Form View -->
+        <record id="view_tally_configuration_form" model="ir.ui.view">
+            <field name="name">tally.configuration.form</field>
+            <field name="model">tally.configuration</field>
+            <field name="arch" type="xml">
+                <form string="Tally Configuration">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="default_journal_ledger"/>
+                            <field name="default_product_ledger"/>
+                            <field name="default_tax_ledger"/>
+                            <field name="bill_allocation_enabled"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="view_tally_configuration_tree" model="ir.ui.view">
+            <field name="name">tally.configuration.tree</field>
+            <field name="model">tally.configuration</field>
+            <field name="arch" type="xml">
+                <list string="Tally Configuration">
+                    <field name="name"/>
+                    <field name="bill_allocation_enabled"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_tally_configuration" model="ir.actions.act_window">
+            <field name="name">Tally Configuration</field>
+            <field name="res_model">tally.configuration</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <!-- Link Action to Menu -->
+        <menuitem id="menu_tally_configuration_action"
+                  name="Tally Configuration"
+                  parent="menu_tally_configuration"
+                  action="action_tally_configuration"
+                  groups="base.group_user"/>
+    </data>
+</odoo>

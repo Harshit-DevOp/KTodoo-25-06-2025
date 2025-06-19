@@ -1,0 +1,53 @@
+<odoo>
+    <record id="view_tally_ledger_staging_form" model="ir.ui.view">
+        <field name="name">tally.ledger.staging.form</field>
+        <field name="model">tally.ledger.staging</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name ="guid" readonly="1"/>
+                        <field name="name"/>
+                        <field name="parent"/>
+                        <field name="address"/>
+                        <field name="state"/>
+                        <field name="country"/>
+                        <field name="gstin"/>
+                        <field name="odoo_account_id" widget="many2one" options="{'no_create': True}"/>
+                      <!--  <field name="odoo_account_id" domain="[('account_type', '=', 'other')]"/> -->
+                    </group>
+                    <footer>
+                        <button name="action_push_to_accounting" type="object" string="Push to Accounting"
+                                class="oe_highlight"
+                                visibility="hidden: pushed_to_accounting"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tally_ledger_staging_tree" model="ir.ui.view">
+        <field name="name">tally.ledger.staging.tree</field>
+        <field name="model">tally.ledger.staging</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name ="guid"/>
+                <field name="name"/>
+                <field name="gstin"/>
+                <field name="odoo_account_id"/>
+                <field name="pushed_to_accounting"/>
+            </list>
+        </field>
+    </record>
+
+    <menuitem id="tally_ledger_menu" name="Tally Ledger" parent="account.menu_finance_entries" sequence="10"/>
+
+    <record id="action_tally_ledger_staging" model="ir.actions.act_window">
+        <field name="name">Tally Ledger Staging</field>
+        <field name="res_model">tally.ledger.staging</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="tally_ledger_staging_menu" name="Tally Ledger Staging" parent="tally_ledger_menu"
+              action="action_tally_ledger_staging"/>
+</odoo>

@@ -1,0 +1,53 @@
+<odoo>
+    <data>
+        <!-- Menu Items -->
+        <menuitem id="menu_tally_field_mapping"
+                  name="Tally Field Mapping"
+                  parent="menu_tally_configuration_root"
+                  groups="base.group_user"/>
+
+        <!-- Form View -->
+        <record id="view_tally_field_mapping_form" model="ir.ui.view">
+            <field name="name">tally.field.mapping.form</field>
+            <field name="model">tally.field.mapping</field>
+            <field name="arch" type="xml">
+                <form string="Tally Field Mapping">
+                    <sheet>
+                        <group>
+                            <field name="odoo_field"/>
+                            <field name="tally_field"/>
+                            <field name="is_active"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="view_tally_field_mapping_tree" model="ir.ui.view">
+            <field name="name">tally.field.mapping.tree</field>
+            <field name="model">tally.field.mapping</field>
+            <field name="arch" type="xml">
+                <list string="Tally Field Mapping">
+                    <field name="odoo_field"/>
+                    <field name="tally_field"/>
+                    <field name="is_active"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_tally_field_mapping" model="ir.actions.act_window">
+            <field name="name">Tally Field Mapping</field>
+            <field name="res_model">tally.field.mapping</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <!-- Link Action to Menu -->
+        <menuitem id="menu_tally_field_mapping_action"
+                  name="Tally Field Mapping"
+                  parent="menu_tally_field_mapping"
+                  action="action_tally_field_mapping"
+                  groups="base.group_user"/>
+    </data>
+</odoo>

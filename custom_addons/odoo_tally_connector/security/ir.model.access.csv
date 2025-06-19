@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_tally_configuration,tally.configuration,model_tally_configuration,,1,1,1,1
+access_tally_xml_tag,tally.xml.tag,model_tally_xml_tag,,1,1,1,1
+access_tally_field_mapping,tally.field.mapping,model_tally_field_mapping,,1,1,1,1

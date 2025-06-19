@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_tally_connector,tally.connector,model_tally_connector,,1,1,1,0
+access_tally_invoice,tally.invoice,model_tally_invoice,,1,1,1,0
+access_tally_account,tally.account.ledger,model_tally_account_ledger,,1,1,1,0

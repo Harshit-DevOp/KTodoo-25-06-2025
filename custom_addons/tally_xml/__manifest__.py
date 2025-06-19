@@ -1,0 +1,22 @@
+{
+    'name': 'Tally XML Sync',
+    'version': '1.0',
+    'summary': 'Sync and manage Tally demo in Odoo',
+    'author': 'Harshit',
+    'category': 'Accounting',
+    'license': 'LGPL-3',
+    'depends': ['account', 'sale', 'base', 'web'],
+    'demo': [
+        'security/ir.model.access.csv',
+        'views/tally_connector_view.xml',
+        'views/tally_invoice_view.xml',
+        'views/tally_account_view.xml',
+        'views/tally_mapping_view.xml',
+        'reports/tally_invoice_report.xml',
+        'demo/demo.xml',
+    ],
+    'assets': {},
+    'installable': True,
+    'application': True,
+    'auto_install': False,
+}
